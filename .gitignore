@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+.idea
+package-lock.json
+views
+public/*
+!public/manifest.json
+!public/robots.txt
+!public/service-worker.js
