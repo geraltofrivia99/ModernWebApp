@@ -1,5 +1,6 @@
 const path = require('path');
 const ReactLoadablePlugin = require('react-loadable/webpack').ReactLoadablePlugin;
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   // Файл, с которого начинается клиентская часть Universal web app
@@ -16,7 +17,10 @@ module.exports = {
   plugins: [
     new ReactLoadablePlugin({
       filename: './public/react-loadable.json',
-    })
+    }),
+    // new CompressionPlugin({
+    //   deleteOriginalAssets: true
+    // })
   ],
   module: {
   // Используем babel-loader для компиляции кода из ECMAScript в понятный браузеру

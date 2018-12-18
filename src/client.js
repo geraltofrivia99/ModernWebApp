@@ -11,6 +11,7 @@ import configureStore from './redux/configureStore'
 import MobileApp from './mobileApp/App'
 
 const state = window.__STATE__
+console.log(state)
 const store = configureStore(state)
 
 const theme = createMuiTheme({

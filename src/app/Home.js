@@ -1,6 +1,5 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as Actions from '&/redux/actions'
 
@@ -22,17 +21,12 @@ const styles = {
 }
 
 class Home extends React.Component{
-  constructor(){
-    super()
-    this.increase = this.increase.bind(this)
-    this.decrease = this.decrease.bind(this)
-  }
   // Функции вызывают dispatch на действия increase или decrease
-  increase(){
-    this.props.actions.increase()
+  increase = () => {
+    this.props.increase()
   }
-  decrease(){
-    this.props.actions.decrease()
+  decrease = () => {
+    this.props.decrease()
   }
   render(){
     return (
@@ -54,16 +48,16 @@ class Home extends React.Component{
   }
 }
 
-// Добавляем в props счетчик
+
 const mapStateToProps = (state) => ({
   count: state.count
 })
-// Добавляем actions к this.props
-const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators(Actions, dispatch)
-})
 
-// Используем react-redux connect для подключения к стору
+const mapDispatchToProps = {
+  increase: Actions.increase,
+  decrease: Actions.decrease
+}
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps

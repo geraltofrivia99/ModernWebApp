@@ -8,7 +8,7 @@ export default function Header() {
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h5" color="inherit">
-          Modern Web App
+          Modern Web App2
         </Typography>
       </Toolbar>
     </AppBar>
